@@ -15,7 +15,7 @@ else:
 	fibonacci = 0
 	fibonacci_2 = 0
 	fibonacci_1 = 1
-	for i in range(1, n):
+	for i in range(n - 1):
 		fibonacci = fibonacci_1 + fibonacci_2
 		fibonacci_2 = fibonacci_1
 		fibonacci_1 = fibonacci
