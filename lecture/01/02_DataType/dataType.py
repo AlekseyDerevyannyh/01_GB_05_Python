@@ -17,3 +17,11 @@ print(s)
 print(a, b, s)
 print(a, '-', b, '-', s)
 print('{} - {} - {}'.format(a, b, s))
+print(f'{a} - {b} - {s}')
+print('{1} - {2} - {0}'.format(a, b, s))
+
+f = True
+print(f)
+
+list = ['1', '2', '3', 'hello', 1, 2, 3.5, True]
+print(list)

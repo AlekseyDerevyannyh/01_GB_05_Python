@@ -1,0 +1,5 @@
+print('введите а')
+a = int(input())
+print('введите b')
+b = int(input())
+print(a, b, a + b)
