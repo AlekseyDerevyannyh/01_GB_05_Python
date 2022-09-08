@@ -13,7 +13,7 @@ coins = list(range(n))
 count_0 = 0
 count_1 = 0
 for i in coins:
-	coins[i] = randint(0, 1)
+	coins[i] = randint(0, 1)	# формируем случайное расположение монет
 	if coins[i]:
 		count_1 += 1
 	else:
