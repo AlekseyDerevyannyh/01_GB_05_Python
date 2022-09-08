@@ -12,9 +12,9 @@ from random import randint
 system('cls')
 
 n = int(input('Введите количество учеников: '))
-studentsHeight = list(range(n))
-for i in studentsHeight:
-	studentsHeight[i] = randint(100, 200)		# формируем список ростов учеников
+studentsHeight = []
+for i in range(n):
+	studentsHeight.append(randint(100, 200))		# формируем список ростов учеников
 
 studentsHeight.sort(reverse = True)				
 print(f'Шеренга учеников по росту: {studentsHeight}')
