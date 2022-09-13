@@ -2,7 +2,6 @@
 # список простых множителей числа N.
 
 from os import system
-from tkinter import W
 
 system('cls')
 

@@ -24,4 +24,4 @@ while s1 - s2 >= 10 ** (-k):
 	s1 = s2 + 4 / (2 * n - 1)
 	n += 1
 	s2 = s1 - 4 / (2 * n - 1)
-print(round((s1 + s2) / 2, k))
+print(f'pi = {round((s1 + s2) / 2, k)}')
