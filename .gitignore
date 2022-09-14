@@ -3,7 +3,10 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
+/seminar/04/HW/01_PiCalc/piCalc1.py
+
 # User-specific files
+
 *.rsuser
 *.suo
 *.user
