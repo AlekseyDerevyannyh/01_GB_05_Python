@@ -34,7 +34,7 @@ if m >= n or m < 1 or n < 1 or m > 1000000 or n > 1000000:
 	print('Ошибка ввода!')
 	exit()
 print(m, n)
-# print(SumOfDivisors(m))
+
 flagFriendly = False
 listFriendly = []
 for i in range(m, n + 1):
