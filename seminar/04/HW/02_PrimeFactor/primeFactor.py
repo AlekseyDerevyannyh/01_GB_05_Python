@@ -10,7 +10,6 @@ if n < 2:
 	print('ОШИБКА! Число N должно быть больше 1!')
 	exit()
 factor = []
-n
 i = 2
 while i <= n:
 	if n % i == 0:
