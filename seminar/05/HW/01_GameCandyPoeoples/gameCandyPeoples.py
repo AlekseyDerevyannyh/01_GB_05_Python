@@ -22,8 +22,10 @@ while candiesOnTable:
 	print('1-ый игрок	стол	2-ой игрок')
 	print(f'{candiesGamers[0]}		{candiesOnTable}	{candiesGamers[1]}')
 	candies = int(input(f'Сколько конфет забирает игрок {gamer + 1}?: '))
-	if candies > candiesLimit:
-		candies = candiesLimit
+
+	if candies > candiesLimit:	candies = candiesLimit
+	elif candies < 0:			candies = 0
+
 	if candies >= candiesOnTable:
 		candiesOnTable = 0
 		winner = gamer
