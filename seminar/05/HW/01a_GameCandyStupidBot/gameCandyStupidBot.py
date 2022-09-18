@@ -20,7 +20,7 @@ else:		print('Результат жеребьёвки: первым ходит �
 winner = 0
 
 while candiesOnTable:
-	print('')
+	print()
 	print('игрок	стол	бот')
 	print(f'{candiesGamers[0]}	{candiesOnTable}	{candiesGamers[1]}')
 	if gamer:
@@ -29,8 +29,9 @@ while candiesOnTable:
 	else:
 		candies = int(input('Сколько конфет забирает игрок?: '))
 
+	# Защита от нарушений правил игры
 	if candies > candiesLimit:	candies = candiesLimit
-	elif candies < 0:			candies = 0
+	elif candies < 1:			candies = 1
 
 	if candies >= candiesOnTable:
 		candiesOnTable = 0
@@ -38,8 +39,7 @@ while candiesOnTable:
 	else:
 		candiesGamers[gamer] += candies
 		candiesOnTable -= candies
-		if gamer:	gamer = 0
-		else:		gamer = 1
+		gamer = int(not gamer)
 
 if winner:	print('Победил бот')
 else:		print('Победил игрок')
