@@ -10,40 +10,27 @@ from random import randint
 
 system('cls')
 
-candiesOnTable = 500
+candiesOnTable = 2021
 candiesLimit = 28
-candiesPlayer1 = 0
-candiesPlayer2 = 0
-player = randint(0, 1)		# Жеребьёвка. 0 - ходит первый игрок. 1 - ходит второй игрок
-
+candiesGamers = [0, 0]
+gamer = randint(0, 1)		# Жеребьёвка. 0 - ходит первый игрок. 1 - ходит второй игрок
+print(f'Результат жеребьёвки: первым ходит игрок {gamer + 1}')
 winner = 0
 
 while candiesOnTable:
-	# system('cls')
 	print('')
 	print('1-ый игрок	стол	2-ой игрок')
-	print(f'{candiesPlayer1}		{candiesOnTable}	{candiesPlayer2}')
-	if not player:
-		candies = int(input('Сколько конфет забирает 1-ый игрок?: '))
-		if candies > candiesLimit:
-			candies = candiesLimit
-		if candies >= candiesOnTable:
-			candiesOnTable = 0
-			winner = 0
-		else:
-			candiesPlayer1 += candies
-			candiesOnTable -= candies
-			player = 1
+	print(f'{candiesGamers[0]}		{candiesOnTable}	{candiesGamers[1]}')
+	candies = int(input(f'Сколько конфет забирает игрок {gamer + 1}?: '))
+	if candies > candiesLimit:
+		candies = candiesLimit
+	if candies >= candiesOnTable:
+		candiesOnTable = 0
+		winner = gamer
 	else:
-		candies = int(input('Сколько конфет забирает 2-ой игрок?: '))
-		if candies > candiesLimit:
-			candies = candiesLimit
-		if candies >= candiesOnTable:
-			candiesOnTable = 0
-			winner = 1
-		else:
-			candiesPlayer2 += candies
-			candiesOnTable -= candies
-			player = 0
+		candiesGamers[gamer] += candies
+		candiesOnTable -= candies
+		if gamer:	gamer = 0
+		else:		gamer = 1
 
 print(f'Победил игрок {winner + 1}')
