@@ -8,7 +8,7 @@ def PrintField (field):				# Вывод игровой области
 		print(i + 1, end = ' ')
 		print(*field[i])
 
-def ActionToIndex(field, action):
+def ActionToIndex(field, action):	# Преобразование ввода в индексы элементов игрового поля и проверка на наличие хода по этому индексу
 	rowSymb = ['1', '2', '3']
 	columnSymb = ['a', 'b', 'c']
 	for i in range(len(rowSymb)):
@@ -17,7 +17,7 @@ def ActionToIndex(field, action):
 				if field[i][j] == '*':	return [i, j]
 	return False
 
-def WinnerCheck(field):
+def WinnerCheck(field):			# Проверка наличия победителя
 	winner = 0
 	if field[0][0] == 'X' and field[0][1] == 'X' and field[0][2] == 'X':	winner = 1
 	elif field[1][0] == 'X' and field[1][1] == 'X' and field[1][2] == 'X':	winner = 1
@@ -40,7 +40,6 @@ def WinnerCheck(field):
 	return winner
 
 
-
 field = [['*', '*', '*'], ['*', '*', '*'], ['*', '*', '*']]
 maxSteps = 9
 countSteps = 0
@@ -56,30 +55,28 @@ PrintField(field)
 print()
 
 while countSteps < maxSteps and not flagWinner:
-	# system('cls')
-
 	if gamer:
 		action = input('Ход игрока 2 (нолики): ')
 		if ActionToIndex(field, action):
 			field[ActionToIndex(field, action)[0]][ActionToIndex(field, action)[1]] = '0'
-			countSteps += 1
 			system('cls')
 			print('Пример ввода хода: 1a, 2b и т.д.')
 			print()
 			PrintField(field)
 			print()
+			countSteps += 1
 		else:
 			print('Недопусимый ход! Пропуск хода!')
 	else:
 		action = input('Ход игрока 1 (крестики): ')
 		if ActionToIndex(field, action):
 			field[ActionToIndex(field, action)[0]][ActionToIndex(field, action)[1]] = 'X'
-			countSteps += 1
 			system('cls')
 			print('Пример ввода хода: 1a, 2b и т.д.')
 			print()
 			PrintField(field)
-			print()			
+			print()
+			countSteps += 1
 		else:
 			print('Недопусимый ход! Пропуск хода!')
 	
