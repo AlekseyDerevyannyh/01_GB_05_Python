@@ -14,7 +14,7 @@ if len(phrases) < 2:
 countVowels = []
 
 for i in phrases:
-	countVowels.append(len([x for x in i if x in vowels]))
+	countVowels.append(len([x for x in i if x.lower() in vowels]))
 
 if countVowels.count(countVowels[0]) == len(countVowels):
 	print('Парам пам-пам')
