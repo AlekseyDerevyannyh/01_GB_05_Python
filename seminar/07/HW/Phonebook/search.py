@@ -1,5 +1,5 @@
-def search_contact (value):
-	data = open('seminar/07/HW/Phonebook/phonebook.txt', 'r', encoding = 'UTF-8')
+def search_contact (path, value):
+	data = open(path, 'r', encoding = 'UTF-8')
 
 	phones = [line[:-1] for line in data]
 	result = [contact for contact in phones if value.lower() in contact.lower()]
