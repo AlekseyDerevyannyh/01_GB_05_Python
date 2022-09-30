@@ -15,11 +15,11 @@ def rand(update, context):
 	context.bot.send_message(update.effective_chat.id, f'{rd(1,100)}')
 
 def voice(update, context):
-	context.bot.send_message(update.effective_chat.id, 'Надоели Ваши голосовые сообщения!! Я пока что не научился их читать!')
+	context.bot.send_message(update.effective_chat.id, 'Я пока таких команд не знаю :(')
 
 start_handler = CommandHandler('start', start)
 random_handler = CommandHandler('random', rand)
-message_handler = MessageHandler(Filters.voice, voice)
+message_handler = MessageHandler(Filters.command, voice)
 
 dispatcher.add_handler(start_handler)
 dispatcher.add_handler(random_handler)
