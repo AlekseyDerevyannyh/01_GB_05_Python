@@ -2,9 +2,9 @@ from read import *
 from write import *
 from os import system
 
-path_timetable = 'seminar/08/HW/03_InformationSystem/timetable.csv'
-path_teachers = 'seminar/08/HW/03_InformationSystem/teachers.csv'
-path_contacts = 'seminar/08/HW/03_InformationSystem/contacts.csv'
+path_timetable = 'timetable.csv'
+path_teachers = 'teachers.csv'
+path_contacts = 'contacts.csv'
 
 def menu ():
 	
