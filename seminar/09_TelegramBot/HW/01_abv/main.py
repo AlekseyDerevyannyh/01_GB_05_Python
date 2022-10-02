@@ -2,7 +2,7 @@
 
 import secret # токен бота лежит в файле secret.py, который добавлен в .gitignore, чтобы не публиковать его на весь интернет
 from telegram import Bot
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, ConversationHandler
+from telegram.ext import Updater, MessageHandler, Filters
 
 bot = Bot(token = secret.key)
 updater = Updater(token = secret.key)
@@ -10,10 +10,7 @@ dispatcher = updater.dispatcher
 
 def remove_abv(update, context):
 	text = update.message.text.split()
-	bot_answer = []
-	for i in text:
-		if 'абв' not in i:
-			bot_answer.append(i)
+	bot_answer = [i for i in text if 'абв' not in i]
 	if bot_answer:	context.bot.send_message(update.effective_chat.id, (' ').join(bot_answer))
 	else:			context.bot.send_message(update.effective_chat.id, 'null')
 

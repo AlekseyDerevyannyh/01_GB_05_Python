@@ -5,8 +5,8 @@ from telegram import Bot
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, ConversationHandler
 from random import randint as rd
 
-import wikipedia
-wikipedia.set_lang('ru')
+# import wikipedia
+# wikipedia.set_lang('ru')
 
 bot = Bot(token = secret.key)
 updater = Updater(token = secret.key)
